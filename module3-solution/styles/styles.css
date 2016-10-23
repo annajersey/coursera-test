@@ -51,6 +51,6 @@ input[type="text"] {
   }
 }
 found-items{display:block; margin-top:10px; clear:both;}
-found-items li{ margin-top:10px; width: 450px;}
-found-items li button{float:right;}
+found-items td{ border:1px solid #aaa; padding:5px 10px}
+found-items  button{ white-space: nowrap;}
 .message{color:red; }
