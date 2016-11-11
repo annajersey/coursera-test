@@ -66,7 +66,7 @@
           ng-disabled="regForm.$invalid"
           ng-click="signupCtrl.submit()">Submit</button>
 
-          <div ng-if="!signupCtrl.invalid_short_name && signupCtrl.completed" style="margin-top: 10px;">
+          <div ng-if="signupCtrl.totalvalid" style="margin-top: 10px;">
             Your information has been saved. 
           </div>
       </form>
