@@ -9,10 +9,10 @@
           required
           
           ng-maxlength="10">
-			{{ signupCtrl.user.firstname }}
+			
           <span
             ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
-            Firstname must be at least 2 characters long
+            Firstname is a required field
           </span>
           <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
             Firstname is a required field
@@ -26,7 +26,7 @@
           required
         
           ng-maxlength="30">
-          {{ signupCtrl.user.lastname }}
+          
           <span
             ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
             Lastname is a required field
@@ -52,28 +52,26 @@
           </span>
           </div>
 		  <div class="form-group">
-		<input class="form-control" type="text" name="short_name" placeholder="Favorite Dish"
+		<input class="form-control" type="text" name="short_name" placeholder="Menu Number"
           ng-model="signupCtrl.user.short_name"
           required>
           <span ng-if="regForm.short_name.$invalid && regForm.short_name.$touched">
             This is a required field
           </span>
+		  <span ng-if="signupCtrl.invalid_short_name && signupCtrl.completed">
+		  No such menu number exists
+		  </span>
           </div>
         <button class="btn btn-primary"
           ng-disabled="regForm.$invalid"
           ng-click="signupCtrl.submit()">Submit</button>
 
-          <div style="margin-top: 10px;">
-            Form valid? {{ regForm.$valid }}
+          <div ng-if="!signupCtrl.invalid_short_name && signupCtrl.completed" style="margin-top: 10px;">
+            Your information has been saved. 
           </div>
       </form>
     </fieldset>
 
-    <div id="info" ng-if="signupCtrl.completed">
-      Username: {{ signupCtrl.user.firstname}} <br>
-      Email: {{ signupCtrl.user.email}} <br>
-      Phone: {{ signupCtrl.user.phone }}
-    </div>
-
+    
 </div>
 </div>
